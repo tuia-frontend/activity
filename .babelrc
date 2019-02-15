@@ -1,26 +1,24 @@
 {
   "presets": [
-    [
-      "@babel/env",
-      {
-        "useBuiltIns": "usage",
-        "modules": false
-      }
-    ]
+    "mobx",
+    ["@babel/preset-env", {
+      "modules": false
+    }]
   ],
   "plugins": [
-    "@babel/plugin-syntax-dynamic-import",
-    "@babel/proposal-class-properties",
-    "@babel/plugin-proposal-optional-chaining",
-    "@babel/proposal-export-default-from",
-    "@babel/proposal-export-namespace-from",
     [
-      "@babel/plugin-transform-runtime",
+      "@babel/plugin-proposal-decorators",
       {
-        "corejs": false,
-        "helpers": false,
-        "regenerator": true
+        "legacy": true
       }
-    ]
+    ],
+    [
+      "@babel/plugin-proposal-class-properties",
+      {
+        "loose": true
+      }
+    ],
+    "@babel/plugin-syntax-dynamic-import",
+    "@babel/plugin-transform-runtime"
   ]
 }
